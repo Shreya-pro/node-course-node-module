@@ -1,6 +1,7 @@
 const express=require('express')
 const hbs=require('hbs')
 const fs=require('fs')
+const port=process.env.port || 3000
 hbs.registerPartials(__dirname + '/views/partials')
 hbs.registerHelper('getDate',()=>{
     return new Date().getFullYear()
@@ -63,4 +64,6 @@ a.get('/bad',(req,res)=>{
     })
 
 
-a.listen(3000)
+a.listen(port,()=>{
+console.log("server port is:" + port)
+})
