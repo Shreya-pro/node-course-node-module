@@ -64,6 +64,6 @@ a.get('/bad',(req,res)=>{
     })
 
 
-a.listen(port,()=>{
+a.listen(port,'0.0.0.0',()=>{
 console.log("server port is:" + port)
 })
