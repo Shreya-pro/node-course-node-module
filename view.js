@@ -1,7 +1,7 @@
 const express=require('express')
 const hbs=require('hbs')
 const fs=require('fs')
-const port=process.env.port
+const port=process.env.PORT | 3000
 hbs.registerPartials(__dirname + '/views/partials')
 hbs.registerHelper('getDate',()=>{
     return new Date().getFullYear()
@@ -13,16 +13,16 @@ return text.toUpperCase()
 var a=express()
 
 a.set('view engine',hbs)
-a.get('/',(req,res)=>{
-//res.send("<h1>hello world</h1>")
-res.send( {
-        name:'shreya',
-        rides:[
-        'bike',
-        'cycle'
-    ]
-    })
-})
+// a.get('/',(req,res)=>{
+// //res.send("<h1>hello world</h1>")
+// res.send( {
+//         name:'shreya',
+//         rides:[
+//         'bike',
+//         'cycle'
+//     ]
+//     })
+// })
 // a.get('/about',(req,res)=>{
 //     res.send('About page')
 // })
@@ -50,7 +50,7 @@ a.get('/about',(req,res)=>{
 
     })
 })
-a.get('/home',(req,res)=>{
+a.get('/',(req,res)=>{
     res.render('home.hbs',{
        pageTitle:'Home page',
        welcomeMessage:'Welcome to the home page' ,
