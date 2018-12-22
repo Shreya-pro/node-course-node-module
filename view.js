@@ -45,7 +45,7 @@ a.use((req,res,next)=>{
 a.use(express.static(__dirname + '/folder'))
 a.get('/about',(req,res)=>{
     res.render('about.hbs',{
-        pageTitle: 'About page',
+        pageTitle: 'About page'
        // currentYear:new Date().getFullYear()
 
     })
@@ -53,8 +53,13 @@ a.get('/about',(req,res)=>{
 a.get('/',(req,res)=>{
     res.render('home.hbs',{
        pageTitle:'Home page',
-       welcomeMessage:'Welcome to the home page' ,
+       welcomeMessage:'Welcome to the home page' 
        //currentYear:new Date().getFullYear()
+    })
+})
+a.get('/project',(req,res)=>{
+    res.render('project.hbs',{
+       pageTitle:'Project page'
     })
 })
 a.get('/bad',(req,res)=>{
